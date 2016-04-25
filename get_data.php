@@ -356,5 +356,52 @@ function tambahKreditPembeli($username, $jumlahUang){
     
 }
 
+function updatePass($username, $newpass){
+	include('db_config.php');
+	$encrypted_password = md5($newpass);
+	$sql = "UPDATE AKUN SET password = '".$encrypted_password."' WHERE username = '".$username."'";
+	$r = mysqli_query($con,$sql);
+    
+    if($r){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function deleteUser($username){
+	include('db_config.php');
+	$sql = "DELETE FROM AKUN WHERE username = '".$username."'";
+	
+	$r = mysqli_query($con,$sql);
+    
+    if($r){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function getUsersByRole($role){
+	include('db_config.php');
+	$sql = "SELECT username FROM AKUN WHERE role = '".$role."'";
+	
+	$r = mysqli_query($con,$sql);
+	
+	if($r){
+		$result  = array();
+		$row  = array();
+		while($res = mysqli_fetch_array($r)){
+			$row["username"]=$res["username"];
+			$result[] = $row;
+		}
+		mysqli_close($con);
+		return $result;
+	} else {
+		mysqli_close($con);
+		return NULL;
+	}
+}
+
 
 ?>

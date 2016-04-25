@@ -55,6 +55,24 @@
 <input type="submit">
 </form>
 
+<form action="updatePassword.php" method="post">
+	Name: <input type="text" name="username"><br>
+	Password Baru: <input type="text" name="password"><br>
+<input type="submit">
+</form>
+
+<form action="deleteUser.php" method="post">
+	User yang mau dihapus: <input type="text" name="username"><br>
+<input type="submit">
+</form>
+
+<form action="getUsersByRole.php" method="post">
+	List user berdasarkan role: <select name="role">
+		<option value="1">Customer</option>
+    		<option value="2">Counter</option>
+    		<option value="3">Admin</option>
+<br><input type="submit">
+</form>
 
 </body>
 </html>
