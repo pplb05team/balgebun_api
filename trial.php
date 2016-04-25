@@ -15,46 +15,34 @@
 <input type="submit">
 </form>
 
-<form action="getMenu.php" method="post">
-	Name: <input type="text" name="username"><br>
-<input type="submit">
-</form>
-
 <form action="getCounter.php" method="post">
 	Counter: <input type="text" name="counter"><br>
 <input type="submit">
 </form>
 
-<form action="getPesanan.php" method="post">
-	username pemesan: <input type="text" name="username"><br>
+<form action="getPesananPenjual.php" method="post">
+	Counter yang mau di cek pesanan: <input type="text" name="username"><br>
 <input type="submit">
 </form>
 
-<form action="getPemasukanCounter.php" method="post">
-	username Penjual: <input type="text" name="username"><br>
+<form action="updatePassword.php" method="post">
+	Name: <input type="text" name="username"><br>
+	Password Baru: <input type="text" name="password"><br>
 <input type="submit">
 </form>
 
-<form action="bayar.php" method="post">
-	username counter mau dibayar: <input type="text" name="username"><br>
+<form action="deleteUser.php" method="post">
+	User yang mau dihapus: <input type="text" name="username"><br>
 <input type="submit">
 </form>
 
-
-<form action="tambahKreditPembeli.php" method="post">
-	username pembeli: <input type="text" name="username"><br>
-	uang: <input type="text" name="jumlahUang"><br>
-
+<form action="getUsersByRole.php" method="post">
+	List user berdasarkan role: <select name="role">
+		<option value="1">Customer</option>
+    		<option value="2">Counter</option>
+    		<option value="3">Admin</option><br>
 <input type="submit">
 </form>
-
-
-<form action="getPemasukanPembeli.php" method="post">
-	username untuk cek pemasukan pembeli: <input type="text" name="username"><br>
-
-<input type="submit">
-</form>
-
 
 </body>
 </html>
