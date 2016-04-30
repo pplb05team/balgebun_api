@@ -403,5 +403,14 @@ function getUsersByRole($role){
 	}
 }
 
+function storeCounter($username, $countername){
+	$sql = "INSERT INTO COUNTER(username, nama_counter, pemasukan, status_buka) VALUES('".$username."', '".$countername."', '0', '0')";
+	$r = mysqli_query($con, $sql);
+	if($r){
+		return true;
+	} else {
+		return false;
+	}
+}
 
 ?>
