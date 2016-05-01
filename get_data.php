@@ -382,6 +382,19 @@ function deleteUser($username){
 	}
 }
 
+function deleteCounter($username){
+	include('db_config.php');
+	$sql = "DELETE FROM COUNTER WHERE username = '".$username."'";
+	
+	$r = mysqli_query($con,$sql);
+    
+    if($r){
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function getUsersByRole($role){
 	include('db_config.php');
 	$sql = "SELECT username FROM AKUN WHERE role = '".$role."'";
@@ -404,8 +417,9 @@ function getUsersByRole($role){
 }
 
 function storeCounter($username, $countername){
-	$sql = "INSERT INTO COUNTER(username, nama_counter, pemasukan, status_buka) VALUES('".$username."', '".$countername."', '0', '0')";
-	$r = mysqli_query($con, $sql);
+	include('db_config.php');
+	$sql = "INSERT INTO COUNTER(username, nama_counter, pemasukan) VALUES('".$username."', '".$countername."', '0')";
+	$r = mysqli_query($con,$sql);
 	if($r){
 		return true;
 	} else {

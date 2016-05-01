@@ -74,5 +74,18 @@
 <br><input type="submit">
 </form>
 
+<form action="deleteCounter.php" method="post">
+	User counter yang mau dihapus: <input type="text" name="username"><br>
+<input type="submit">
+</form>
+
+<form action="registerCounter.php" method="post">
+	Name: <input type="text" name="username"><br>
+	E-mail: <input type="text" name="email"><br>
+	Password: <input type="text" name="password"><br>
+	Counter Name: <input type="text" name="countername"><br>
+<input type="submit">
+</form>
+
 </body>
 </html>
